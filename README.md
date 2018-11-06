@@ -77,7 +77,7 @@ workflows:
 
 
 ### with-splitting
-##### Run a testing command (`test-command`) with CircleCI's built-in test splitting feature enabled. `$TESTFILES` is an environemnt variable that is set via this command with a list of files to be tested by container. This command requires that the `parallelism` key be set to a value greater than 1. Only one of `test-file`, `test-path`, or `glob-path` should be used to determine test-splitting.
+##### Run a testing command (`test-command`) with CircleCI's built-in test splitting feature enabled. `$TESTFILES` is an environemnt variable that is set via this command with a list of files to be tested by container. This command requires that the `parallelism` key be set to a value greater than 1. Only one of `test-file`, `test-path`, or `glob-path` should be used to determine test-splitting. Visit https://circleci.com/docs/2.0/parallelism-faster-jobs for more details on CircleCI's test-splitting feature.
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
