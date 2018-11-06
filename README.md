@@ -55,8 +55,8 @@ workflows:
 | mysql | latest |
 
 ## Commands
-`install-package-manager`
-Install a specific version of yarn or npm.
+### install-package-manager
+##### Install a specific version of yarn or npm.
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -65,8 +65,9 @@ Install a specific version of yarn or npm.
 | npm_version | string | "latest" | Version of npm to be installed. |
 | yarn_version | string | "" | Version of yarn to be installed.  |
 
-`with-cache`
-Run a set of steps with project dependencies cached.
+
+### with-cache
+##### Run a set of steps with project dependencies cached.
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
@@ -75,8 +76,8 @@ Run a set of steps with project dependencies cached.
 | cache-key | string | "package.json" | Version of npm to be installed. |
 
 
-`with-splitting`
-Run a testing command (`test-command`) with CircleCI's built-in test splitting feature enabled. `$TESTFILES` is an environemnt variable that is set via this command with a list of files to be tested by container. This command requires that the `parallelism` key be set to a value greater than 1. Only one of `test-file`, `test-path`, or `glob-path` should be used to determine test-splitting.
+### with-splitting
+##### Run a testing command (`test-command`) with CircleCI's built-in test splitting feature enabled. `$TESTFILES` is an environemnt variable that is set via this command with a list of files to be tested by container. This command requires that the `parallelism` key be set to a value greater than 1. Only one of `test-file`, `test-path`, or `glob-path` should be used to determine test-splitting.
 
 | Parameter | Type | Default | Description |
 | --- | --- | --- | --- |
