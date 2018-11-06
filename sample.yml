@@ -1,0 +1,40 @@
+version: 2.1
+
+orbs:
+  node-orb: circleci/node@0.0.1
+
+jobs:
+  build:
+    executor:
+      name: node-orb/node # put executor in the name
+      tag: "6"
+    parallelism: 3
+    steps:
+      - checkout
+      - node-orb/install_package_manager:
+          npm: true
+          npm_version: 6.0.1
+      - node-orb/with_cache:
+          steps:
+            - run: 
+                command: npm install
+      - run: mkdir -p ~/project/junit
+      - node-orb/with_splitting:
+          glob-path: "test/**/*.spec.js"
+          steps:
+            - run: env
+            - run: 
+                command: npm test --glob ${TESTFILES}
+                environment:
+                  MOCHA_FILE: ~/project/junit/test-results.xml
+                when: always
+      - store_test_results:
+          path: ~/project/junit
+      - store_artifacts:
+          path: ~/project/junit
+      - run: env
+
+workflows:
+  build-test-deploy:
+    jobs:
+      - build
