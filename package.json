@@ -1,0 +1,26 @@
+{
+  "name": "orb",
+  "version": "1.0.0",
+  "description": "A nodeJS Orb for CircleCI that encapsulates some common tasks associated with nodeJS and CircleCI",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heug/node-orb.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heug/node-orb/issues"
+  },
+  "homepage": "https://github.com/heug/node-orb#readme",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
+  }
+}
