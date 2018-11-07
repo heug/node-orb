@@ -13,13 +13,23 @@ jobs:
       - checkout
       - run: 
           name: Check Node version
-          command: [$(node --version) == "v6.14.4"]; echo $?
+          command: |
+            if [$(node --version) == "v6.14.4"]; then
+              exit 0
+            else
+              exit 1
+            fi
       - node-orb/install_package_manager:
           npm: true
           npm_version: 6.0.1
       - run:
           name: Check NPM version
-          command: [$(npm --version) == "6.0.1"]; echo $?
+          command: |
+            if [$(npm --version) == "6.0.1"]; then
+              exit 0
+            else
+              exit 1
+            fi
       - node-orb/with_cache:
           steps:
             - run: 
