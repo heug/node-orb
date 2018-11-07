@@ -32,7 +32,7 @@ jobs:
             fi
       - node-orb/install-package-manager:
           yarn: true
-          npm_version: 1.10.0
+          yarn_version: 1.10.0
       - run:
           name: Check Yarn version
           command: |
