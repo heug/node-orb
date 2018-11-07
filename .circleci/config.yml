@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  node-orb: circleci/node@0.0.1
+  node-orb: heug/node@dev:0.0.5
 
 jobs:
   build:
