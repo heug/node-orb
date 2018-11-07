@@ -30,6 +30,17 @@ jobs:
             else
               exit 1
             fi
+      - node-orb/install-package-manager:
+          yarn: true
+          npm_version: 1.10.0
+      - run:
+          name: Check Yarn version
+          command: |
+            if [ "$(yarn --version)" == "1.10.0" ]; then
+              exit 0
+            else
+              exit 1
+            fi
       - node-orb/with-cache:
           steps:
             - run: 
@@ -38,7 +49,6 @@ jobs:
       - node-orb/with-splitting:
           glob-path: "test/**/*.spec.js"
           steps:
-            - run: env
             - run: 
                 command: npm test --glob ${TESTFILES}
                 environment:
