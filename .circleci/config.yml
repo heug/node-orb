@@ -28,6 +28,7 @@ jobs:
             if [ "$(npm --version)" == "6.0.1" ]; then
               exit 0
             else
+              npm --version
               exit 1
             fi
       - node-orb/install-package-manager:
@@ -39,6 +40,7 @@ jobs:
             if [ "$(yarn --version)" == "1.10.0" ]; then
               exit 0
             else
+              yarn --version
               exit 1
             fi
       - node-orb/with-cache:
