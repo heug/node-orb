@@ -19,7 +19,7 @@ jobs:
             else
               exit 1
             fi
-      - node-orb/install_package_manager:
+      - node-orb/install-package-manager:
           npm: true
           npm_version: 6.0.1
       - run:
@@ -30,12 +30,12 @@ jobs:
             else
               exit 1
             fi
-      - node-orb/with_cache:
+      - node-orb/with-cache:
           steps:
             - run: 
                 command: npm install
       - run: mkdir -p ~/project/junit
-      - node-orb/with_splitting:
+      - node-orb/with-splitting:
           glob-path: "test/**/*.spec.js"
           steps:
             - run: env
